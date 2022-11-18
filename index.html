@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/skeleton.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="twelve-columns">
+            <h1>Weather Dashboard</h1>
+            <hr id="border">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="twelve-columns">
+            <h2 >Search for a City:</h2>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container">
+        <div class="six columns">
+        <input id="cityName" class="u-full-width" type="text" placeholder="Name of Place">
+        <button id="search" class="button-primary">Search</button>
+        </div>
+        <div class="six columns" id="history">
+            <div class="container container_nested">
+                <div class="row">
+                    <div class="six columns" id="histOne">fzfbfzb</div>
+                    <div class="six columns" id="histTwo">fbzdbzsdfb</div>
+                </div>
+                <div class="row">
+                    <div class="six columns" id="histThree">tywtry</div>
+                    <div class="six columns" id="histFour">rtqer</div>
+                </div>
+                <div class="row">
+                    <div class="six columns" id="histFive">fbas</div>
+                    <div class="six columns" id="histSix">e234t</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="twelve-columns">
+            <h2 id="city"></h2>
+            <hr id="border">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="nine columns">
+                <table class="u-full-width">
+                    <thead>
+                      <tr>
+                        <th>Temp:</th>
+                        <th>Wind:</th>
+                        <th>Humidity:</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td id="temp"> </td>
+                        <td id="wind"> </td>
+                        <td id="humid"> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="three columns"></div>
+        </div>
+    </div>
+        
+  
+    <div id="fiveDayForcast">
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

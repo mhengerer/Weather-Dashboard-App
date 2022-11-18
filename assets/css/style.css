@@ -1,0 +1,39 @@
+:root {
+    --primary: #DDE9E7;
+    --secondary: #ffffff;
+    --accent: #8E5DE7;
+}
+
+*{
+    background-color: var(--primary);
+    color: var(--accent);
+    font-size: 10px;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+#flex {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+}
+
+#list {
+    background-color: var(--accent);
+    color: var(--secondary);
+    font-size: 3rem;
+
+    padding: auto;
+
+
+}
+
+hr {
+    border: 1px solid var(--accent);
+}
