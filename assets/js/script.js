@@ -5,9 +5,11 @@ var windEl = document.querySelector("#wind");
 var humidityEl = document.querySelector("#humid");
 var fiveDayForEl = document.querySelector("#fiveDayForcast");
 var searchButton = document.querySelector("#search");
+var searchHistory = JSON.parse(localStorage.getItem("history")) || [];
+var lastSearches = document.querySelector("#history");
 
 function getWeather(cityNameEl) {
-  var cityNameEl = document.getElementById("cityName").value;
+  // var cityNameEl = document.getElementById("cityName").value;
   
   var queryURL =
     "http://api.openweathermap.org/data/2.5/weather?q=" +
@@ -34,6 +36,22 @@ function getWeather(cityNameEl) {
     });
 }
 
+function renderPastSearches() {
+  lastSearches.innerHTML = "";
+  
+  for (let i = 0; i < searchHistory.length; i++) {
+    var histList = document.createElement("button");
+    histList.classList.add("button-primary")
+    histList.textContent = searchHistory[i];
+
+    lastSearches.append(histList);
+
+    histList.addEventListener("click", function(event){
+      var searchText = event.target.innerHTML
+      getWeather(searchText)
+    })
+  }
+}
 
 function getForcast(lat, lon) {
   var queryURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}&units=imperial`;
@@ -74,4 +92,18 @@ function getForcast(lat, lon) {
     });
 }
 
-searchButton.addEventListener("click", getWeather);
+function saveSearches(cityNameEl) {
+  searchHistory.push(cityNameEl)
+  localStorage.setItem('history', JSON.stringify(searchHistory))
+}
+
+
+searchButton.addEventListener("click", function(){
+  var cityNameEl = document.getElementById("cityName").value;
+  
+  getWeather(cityNameEl);
+  saveSearches(cityNameEl);
+  renderPastSearches();
+});
+
+renderPastSearches();
