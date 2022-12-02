@@ -12,7 +12,7 @@ function getWeather(cityNameEl) {
   // var cityNameEl = document.getElementById("cityName").value;
   
   var queryURL =
-    "http://api.openweathermap.org/data/2.5/weather?q=" +
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
     cityNameEl +
     "&appid=" +
     APIKey +
@@ -54,7 +54,7 @@ function renderPastSearches() {
 }
 
 function getForcast(lat, lon) {
-  var queryURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}&units=imperial`;
+  var queryURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}&units=imperial`;
   fetch(queryURL)
     .then(function (response) {
       return response.json();
@@ -76,7 +76,7 @@ function getForcast(lat, lon) {
         cardEl.classList.add("card");
         fiveDayEl.appendChild(cardEl);
         var smlImg = document.createElement("img");
-        smlImg.src = `http://openweathermap.org/img/wn/${daily.weather[0].icon}@2x.png`;
+        smlImg.src = `https://openweathermap.org/img/wn/${daily.weather[0].icon}@2x.png`;
         cardEl.appendChild(smlImg);
         console.log(fiveDayEl, i);
         var fiveTemp = document.createElement("li");
